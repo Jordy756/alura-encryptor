@@ -1,4 +1,4 @@
-import { encrypt, decrypt } from "@/utils/encryptor";
+import { encrypt, decrypt } from "@utils/encryptor";
 
 const outputField = document.getElementById("output-text") as HTMLTextAreaElement;
 const noMessageFoundContainer = document.querySelector(".no-message-found-container") as HTMLElement;

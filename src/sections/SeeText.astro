@@ -1,20 +1,20 @@
 ---
-import Copy from "@/assets/icons/Copy.astro";
-import Button from "@/components/Button.astro";
-import Textarea from "@/components/Textarea.astro";
+import Copy from "@icons/CopyIcon.astro";
+import Button from "@components/Button.astro";
+import Textarea from "@components/Textarea.astro";
 import { Image } from "astro:assets";
-import dollImage from "@/assets/images/doll.webp";
+// import dollImage from "/doll.webp";
 ---
 
 <section>
     <Textarea id="output-text" readonly />
     <div class="no-message-found-container">
-        <Image src={dollImage} alt="Ningún mensaje fue encontrado" />
+        <!-- <Image src={dollImage} alt="Ningún mensaje fue encontrado" /> -->
         <h4>Ningún mensaje fue encontrado</h4>
         <p>Ingresa el texto que desees encriptar o desencriptar.</p>
     </div>
     <div class="message-found-container">
-        <Button id="btn-copy-to-clipboard" className="btn-primary">
+        <Button id="btn-copy-to-clipboard">
             <Copy />
             Copiar
         </Button>

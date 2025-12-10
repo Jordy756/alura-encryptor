@@ -1,14 +1,14 @@
 ---
-import Button from "@/components/Button.astro";
-import Textarea from "@/components/Textarea.astro";
+import Button from "@components/Button.astro";
+import Textarea from "@components/Textarea.astro";
 ---
 
 <section>
     <Textarea id="input-text" placeholder="Ingresa el texto a encriptar o desencriptar" />
     <span>⚠ Solo letras minúsculas y sin acento</span>
     <div>
-        <Button id="btn-encrypt" className="btn-primary">Encriptar</Button>
-        <Button id="btn-decrypt" className="btn-secondary">Desencriptar</Button>
+        <Button id="btn-encrypt">Encriptar</Button>
+        <Button id="btn-decrypt" variant="secondary">Desencriptar</Button>
     </div>
 </section>
 
