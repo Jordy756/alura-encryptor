@@ -24,29 +24,33 @@ import DocumentIcon from "@components/icons/DocumentIcon.astro";
     section {
         flex: 1 250px;
         position: relative;
-        border-radius: var(--border-radius-out);
-        border: 1px solid light-dark(var(--neutral-800), var(--neutral-200));
         display: flex;
         flex-direction: column;
         gap: 1rem;
         padding: 1rem;
+        min-height: 300px;
+        border-radius: var(--border-radius-out);
+        border: 1px solid light-dark(var(--neutral-800), var(--neutral-200));
+        overflow: hidden;
     }
 
     section > span {
-        /* max-width: 400px; */
-        text-wrap: break-word;
+        display: none;
         overflow-wrap: anywhere;
         opacity: 0;
-        transition: opacity 0.3s ease-in-out;
+    }
+
+    section > span,
+    section > div,
+    section > :global(button.primary) {
+        transition:
+            opacity 0.3s ease-in-out,
+            display 0.3s ease-in-out allow-discrete;
     }
 
     section > span:not(:empty) {
+        display: block;
         opacity: 1;
-    }
-
-    section > span:not(:empty) + div {
-        opacity: 0;
-        scale: 0;
     }
 
     section > div {
@@ -57,10 +61,11 @@ import DocumentIcon from "@components/icons/DocumentIcon.astro";
         align-items: center;
         gap: 0.5rem;
         text-align: center;
-        scale: 1;
-        transition:
-            opacity 0.3s ease-in-out,
-            scale 0.3s ease-in-out;
+    }
+
+    section > span:not(:empty) + div {
+        opacity: 0;
+        display: none;
     }
 
     section > div > figure {
@@ -71,26 +76,31 @@ import DocumentIcon from "@components/icons/DocumentIcon.astro";
         height: 96px;
         color: var(--primary-500);
         background-color: #ea4c891a;
-        border-radius: 9999px;
+        border-radius: 9999999px;
     }
 
     section > div > h2 {
         font-size: var(--text-size-medium);
     }
 
-    section > :global(button) {
+    section > :global(button.primary) {
         flex: none;
+        margin-top: auto;
         border-radius: var(--border-radius-in);
+        display: flex;
     }
 
-    section > span:empty ~ :global(button) {
+    section > span:empty ~ :global(button.primary) {
         opacity: 0;
+        display: none;
         pointer-events: none;
     }
 
     @starting-style {
-        section > span:not(:empty) + div {
-            scale: 1;
+        section > span:not(:empty),
+        section > div,
+        section > :global(button.primary) {
+            opacity: 0;
         }
     }
 </style>
