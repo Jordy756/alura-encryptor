@@ -1,30 +1,16 @@
 import { encrypt, decrypt } from "@utils/encryptor";
 
-const outputField = document.getElementById("output-text") as HTMLTextAreaElement;
-const noMessageFoundContainer = document.querySelector(".no-message-found-container") as HTMLElement;
-const messageFoundContainer = document.querySelector(".message-found-container") as HTMLElement;
+const initEncryption = () => {
+    const encryptButton = document.getElementById("btn-encrypt") as HTMLButtonElement;
+    const decryptButton = document.getElementById("btn-decrypt") as HTMLButtonElement;
+    const outputField = document.getElementById("output-text") as HTMLSpanElement;
 
-const getText = () => (document.getElementById("input-text") as HTMLInputElement).value;
+    const getText = () => (document.getElementById("input-text") as HTMLInputElement).value;
+    const handleEncrypt = () => encrypt(outputField, getText());
+    const handleDecrypt = () => decrypt(outputField, getText());
 
-const handleMessageFound = (message: string) => {
-    if (message === "") {
-        noMessageFoundContainer.style.display = "flex";
-        messageFoundContainer.style.display = "none";
-    } else {
-        noMessageFoundContainer.style.display = "none";
-        messageFoundContainer.style.display = "flex";
-    }
+    encryptButton.addEventListener("click", handleEncrypt);
+    decryptButton.addEventListener("click", handleDecrypt);
 };
 
-const handleEncrypt = () => {
-    encrypt(outputField, getText());
-    handleMessageFound(outputField.value);
-};
-
-const handleDecrypt = () => {
-    decrypt(outputField, getText());
-    handleMessageFound(outputField.value);
-};
-
-(document.getElementById("btn-encrypt") as HTMLButtonElement).addEventListener("click", handleEncrypt);
-(document.getElementById("btn-decrypt") as HTMLButtonElement).addEventListener("click", handleDecrypt);
+initEncryption();
