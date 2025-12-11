@@ -1,10 +1,12 @@
 ---
-import ToggleThemeIcon from "./icons/ToggleThemeIcon.astro";
+import ToggleThemeIcon from "@icons/ToggleThemeIcon.astro";
 ---
 
 <header>
     <nav>
-        <h1>AluEncrypt</h1>
+        <h1>
+            <a href="/#">AluEncrypt</a>
+        </h1>
         <button id="toggle-theme-btn" aria-label="Cambiar tema" title="Cambiar tema">
             <ToggleThemeIcon width={24} />
         </button>
@@ -32,4 +34,10 @@ import ToggleThemeIcon from "./icons/ToggleThemeIcon.astro";
         font-size: var(--text-size-huge);
         color: var(--primary-500);
     }
+
+    header > nav > button {
+        display: flex;
+    }
 </style>
+
+<script src="../scripts/components/header.ts"></script>

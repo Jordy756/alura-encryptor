@@ -1,4 +1,4 @@
-const initHeader = () => {
+const initHeader = (): void => {
     const htmlRootElement = document.documentElement as HTMLHtmlElement;
     const toggleThemeButton = document.getElementById("toggle-theme-btn") as HTMLButtonElement;
 
@@ -13,4 +13,4 @@ const initHeader = () => {
     toggleThemeButton.addEventListener("click", handleToggle);
 };
 
-export default initHeader;
+initHeader();
