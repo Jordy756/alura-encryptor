@@ -1,4 +1,4 @@
-import { encrypt, decrypt } from "@utils/encryptor";
+import { encrypt, decrypt } from "@utils/handleEncryption";
 import initHeader from "@scripts/components/header";
 
 const initHome = () => {
