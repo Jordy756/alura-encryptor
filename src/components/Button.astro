@@ -33,6 +33,11 @@ const { variant = "primary", class: className, ...props } = Astro.props;
         &:hover {
             opacity: 0.8;
         }
+
+        &:disabled {
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
     }
 
     .secondary {
@@ -41,11 +46,18 @@ const { variant = "primary", class: className, ...props } = Astro.props;
         border: 1px solid light-dark(var(--neutral-800), var(--neutral-200));
         transition:
             color 0.3s ease-in-out,
-            border 0.3s ease-in-out;
+            border-color 0.3s ease-in-out;
 
         &:hover {
             color: light-dark(var(--neutral-50), var(--neutral-900));
-            border: 1px solid light-dark(var(--neutral-50), var(--neutral-900));
+            border-color: light-dark(var(--neutral-50), var(--neutral-900));
+        }
+
+        &:disabled {
+            cursor: not-allowed;
+            color: light-dark(var(--neutral-400), var(--neutral-700));
+            border-color: light-dark(var(--neutral-800), var(--neutral-200));
+            opacity: 0.6;
         }
     }
 </style>
