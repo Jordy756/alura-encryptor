@@ -1,6 +1,9 @@
 import { encrypt, decrypt } from "@utils/encryptor";
+import initHeader from "@scripts/components/header";
 
-const initEncryption = () => {
+const initHome = () => {
+    initHeader();
+
     const encryptButton = document.getElementById("btn-encrypt") as HTMLButtonElement;
     const decryptButton = document.getElementById("btn-decrypt") as HTMLButtonElement;
     const copyButton = document.getElementById("btn-copy-to-clipboard") as HTMLButtonElement;
@@ -16,4 +19,4 @@ const initEncryption = () => {
     copyButton.addEventListener("click", copyToClipboard);
 };
 
-initEncryption();
+initHome();

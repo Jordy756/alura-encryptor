@@ -42,21 +42,21 @@ const { variant = "primary", class: className, ...props } = Astro.props;
 
     .secondary {
         padding: 15px 31px;
-        color: light-dark(var(--neutral-400), var(--neutral-700));
-        border: 1px solid light-dark(var(--neutral-800), var(--neutral-200));
+        color: light-dark(var(--neutral-700), var(--neutral-400));
+        border: 1px solid light-dark(var(--neutral-200), var(--neutral-800));
         transition:
             color 0.3s ease-in-out,
             border-color 0.3s ease-in-out;
 
         &:hover {
-            color: light-dark(var(--neutral-50), var(--neutral-900));
-            border-color: light-dark(var(--neutral-50), var(--neutral-900));
+            color: light-dark(var(--neutral-900), var(--neutral-50));
+            border-color: light-dark(var(--neutral-900), var(--neutral-50));
         }
 
         &:disabled {
             cursor: not-allowed;
-            color: light-dark(var(--neutral-400), var(--neutral-700));
-            border-color: light-dark(var(--neutral-800), var(--neutral-200));
+            color: light-dark(var(--neutral-700), var(--neutral-400));
+            border-color: light-dark(var(--neutral-200), var(--neutral-800));
             opacity: 0.6;
         }
     }
