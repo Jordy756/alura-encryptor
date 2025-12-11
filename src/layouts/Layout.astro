@@ -1,6 +1,6 @@
 ---
-import Footer from "@components/Footer.astro";
-import Header from "@components/Header.astro";
+import "@fontsource/montserrat/400";
+import "@fontsource/montserrat/600";
 
 interface Props {
     title: string;
@@ -26,10 +26,16 @@ const { title } = Astro.props;
 </html>
 
 <style is:global>
-    @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-
     :root {
-        --font: "Montserrat", sans-serif;
+        --font-family: "Montserrat", sans-serif;
+        --text-size-mega: clamp(2.027rem, 5vw + 1rem, 3.815rem);
+        --text-size-huge: clamp(1.802rem, 4vw + 1rem, 3.052rem);
+        --text-size-xlarge: clamp(1.602rem, 3vw + 1rem, 2.441rem);
+        --text-size-large: clamp(1.424rem, 2.5vw + 1rem, 1.953rem);
+        --text-size-medium: clamp(1.266rem, 2vw + 1rem, 1.563rem);
+        --text-size-small: clamp(1.125rem, 1.5vw + 1rem, 1.25rem);
+        --text-size-base: 1rem;
+
         --neutral-50: #fbfbfc;
         --neutral-100: #f3f3f5;
         --neutral-200: #e8e8ea;
@@ -41,7 +47,10 @@ const { title } = Astro.props;
         --neutral-800: #2b2b30;
         --neutral-900: #161618;
         --primary-500: #ea4c89;
+
         --border-radius-out: 5px;
+        --border-radius-in: 2.5px;
+
         --max-width: 1200px;
     }
 
@@ -138,38 +147,20 @@ const { title } = Astro.props;
 
     html {
         font-family: system-ui, sans-serif;
-        color-scheme: light;
+        color-scheme: light dark;
     }
 
     body {
-        font-family: var(--font);
-        font-size: 1rem;
+        font-family: var(--font-family);
+        font-size: var(--text-size-base);
+        line-height: 1.7;
         background-color: light-dark(var(--neutral-900), var(--neutral-50));
         color: light-dark(var(--neutral-50), var(--neutral-900));
     }
 
-    h1 {
-        font-size: 2.986rem;
-    }
-
-    h2 {
-        font-size: 2.488rem;
-    }
-
-    h3 {
-        font-size: 2.074rem;
-    }
-
-    h4 {
-        font-size: 1.728rem;
-    }
-
-    h5 {
-        font-size: 1.44rem;
-    }
-
-    h6 {
-        font-size: 1.2rem;
+    :is(h1, h2, h3, h4, h5, h6) {
+        font-weight: 600;
+        line-height: 1.2;
     }
 
     .root {

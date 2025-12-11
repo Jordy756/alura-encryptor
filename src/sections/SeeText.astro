@@ -1,40 +1,72 @@
 ---
-import Copy from "@icons/CopyIcon.astro";
+import CopyIcon from "@icons/CopyIcon.astro";
 import Button from "@components/Button.astro";
-import Textarea from "@components/Textarea.astro";
-import { Image } from "astro:assets";
-// import dollImage from "/doll.webp";
+import DocumentIcon from "@components/icons/DocumentIcon.astro";
 ---
 
 <section>
-    <Textarea id="output-text" readonly />
-    <div class="no-message-found-container">
-        <!-- <Image src={dollImage} alt="Ningún mensaje fue encontrado" /> -->
-        <h4>Ningún mensaje fue encontrado</h4>
+    <span id="output-text"></span>
+    <div>
+        <figure>
+            <DocumentIcon width={64} height={64} />
+        </figure>
+        <h2>Ningún mensaje fue encontrado</h2>
         <p>Ingresa el texto que desees encriptar o desencriptar.</p>
     </div>
-    <div class="message-found-container">
-        <Button id="btn-copy-to-clipboard">
-            <Copy />
-            Copiar
-        </Button>
-    </div>
+    <Button id="btn-copy-to-clipboard">
+        <CopyIcon width={20} height={20} /> Copiar
+    </Button>
 </section>
 
 <script src="../scripts/handleClipboard.ts"></script>
 
 <style>
     section {
-        border-radius: 5px;
-        flex: 1;
-        min-width: 300px;
+        flex: 1 250px;
         position: relative;
-        background-color: var(--white-color);
-        color: var(--black-color);
-        box-shadow: 0 0 10px 5px var(--primary-color);
+        border-radius: var(--border-radius-out);
+        border: 1px solid light-dark(var(--neutral-800), var(--neutral-200));
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
     }
 
-    .no-message-found-container,
+    section > div {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        margin: auto;
+        text-align: center;
+    }
+
+    section > div > figure {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 96px;
+        height: 96px;
+        color: var(--primary-500);
+        background-color: #ea4c891a;
+        border-radius: 9999px;
+    }
+
+    section > div > h2 {
+        font-size: var(--text-size-medium);
+    }
+
+    section > :global(button) {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 2rem);
+        bottom: 1rem;
+        border-radius: var(--border-radius-in);
+    }
+
+    /* .no-message-found-container,
     .message-found-container {
         position: absolute;
         width: 100%;
@@ -49,29 +81,11 @@ import { Image } from "astro:assets";
         justify-content: center;
         align-items: center;
         gap: 1rem;
-    }
-
-    .no-message-found-container > img {
-        max-width: 100%;
-        max-height: 200px;
-        object-fit: cover;
-        aspect-ratio: 16 / 9;
-        object-position: top;
-    }
+    } 
 
     .message-found-container {
         bottom: 0;
         display: none;
     }
-
-    h4,
-    p {
-        text-align: center;
-    }
-
-    @media screen and (max-width: 768px) {
-        .no-message-found-container > img {
-            display: none;
-        }
-    }
+*/
 </style>
