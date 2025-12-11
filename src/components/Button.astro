@@ -15,38 +15,37 @@ const { variant = "primary", class: className, ...props } = Astro.props;
 <style>
     button {
         flex: 1;
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
+        border-radius: var(--border-radius-out);
         text-align: center;
-        border: 1px solid var(--primary-color);
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 0.5rem;
+        font-weight: 600;
     }
 
     .primary {
-        background-color: var(--primary-color);
-        border: none;
-        transition: scale 0.3s ease-in-out;
+        padding: 16px 32px;
+        background-color: var(--primary-500);
+        color: var(--neutral-50);
+        transition: opacity 0.3s ease-in-out;
 
         &:hover {
-            scale: 1.01;
+            opacity: 0.8;
         }
     }
 
     .secondary {
-        background-color: transparent;
-        color: var(--primary-color);
+        padding: 15px 31px;
+        color: light-dark(var(--neutral-400), var(--neutral-700));
+        border: 1px solid light-dark(var(--neutral-800), var(--neutral-200));
         transition:
-            box-shadow 0.3s ease-in-out,
             color 0.3s ease-in-out,
             border 0.3s ease-in-out;
 
         &:hover {
-            border: 1px solid var(--white-color);
-            box-shadow: inset 17rem 0 0 0 var(--white-color);
-            color: var(--black-color);
+            color: light-dark(var(--neutral-50), var(--neutral-900));
+            border: 1px solid light-dark(var(--neutral-50), var(--neutral-900));
         }
     }
 </style>

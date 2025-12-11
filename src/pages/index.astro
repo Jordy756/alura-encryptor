@@ -1,22 +1,29 @@
 ---
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
 import Layout from "@layouts/Layout.astro";
 import SeeText from "@sections/SeeText.astro";
 import WriteText from "@sections/WriteText.astro";
 ---
 
 <Layout title="AluEncrypt">
+    <Header />
     <main>
         <WriteText />
         <SeeText />
     </main>
+    <Footer />
 </Layout>
 
 <style>
     main {
         flex: 1;
+        align-self: center;
         padding: 1rem;
         display: flex;
         flex-wrap: wrap;
         gap: 1rem;
+        width: min(var(--max-width), 100%);
+        /* background-color: red; */
     }
 </style>
