@@ -3,10 +3,10 @@ import type { IconProps } from "@definitions/icon";
 
 interface Props extends IconProps {}
 
-const { width = 24, height = 24, className = "" } = Astro.props;
+const { width = 20, className = "" } = Astro.props;
 ---
 
-<svg width={width} height={height} class={className} viewBox="0 0 24 24">
+<svg width={width} class={className} viewBox="0 0 24 24">
     <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
         <path
             d="M7 9.667A2.667 2.667 0 0 1 9.667 7h8.666A2.667 2.667 0 0 1 21 9.667v8.666A2.667 2.667 0 0 1 18.333 21H9.667A2.667 2.667 0 0 1 7 18.333z"

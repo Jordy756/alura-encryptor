@@ -53,7 +53,11 @@ const { title } = Astro.props;
 
         --max-width: 1200px;
 
-        color-scheme: light dark;
+        color-scheme: dark;
+    }
+
+    :root.light {
+        color-scheme: light;
     }
 
     *,
@@ -145,18 +149,6 @@ const { title } = Astro.props;
 
     template {
         display: none;
-    }
-
-    html {
-        font-family: system-ui, sans-serif;
-    }
-
-    html.light {
-        color-scheme: light;
-    }
-
-    html.dark {
-        color-scheme: dark;
     }
 
     body {

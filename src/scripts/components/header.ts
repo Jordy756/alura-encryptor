@@ -1,27 +1,29 @@
 const initHeader = () => {
-    // const toggleThemeButton = document.getElementById("toggle-theme-btn") as HTMLButtonElement;
-    // const htmlStyle = document.documentElement.style;
+    const htmlRootElement = document.documentElement as HTMLHtmlElement;
+    const toggleThemeButton = document.getElementById("toggle-theme-btn") as HTMLButtonElement;
 
-    // const theme = (() => {
-    //     const localStorageTheme = localStorage?.getItem("theme") ?? "";
+    const theme = (() => {
+        const localStorageTheme = localStorage?.getItem("theme") ?? "";
 
-    //     if (["dark", "light"].includes(localStorageTheme)) return localStorageTheme;
-    //     if (window.matchMedia("(prefers-color-scheme: dark)").matches) return "dark";
+        if (["dark", "light"].includes(localStorageTheme)) return localStorageTheme;
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) return "dark";
 
-    //     return "light";
-    // })();
+        return "light";
+    })();
 
-    // htmlStyle.colorScheme = theme;
-    // window.localStorage.setItem("theme", theme);
+    if (theme === "light") htmlRootElement.classList.add("light");
 
-    // const handleToggle = () => {
-    //     const isDarkMode = htmlStyle.colorScheme === "dark";
+    window.localStorage.setItem("theme", theme);
 
-    //     htmlStyle.colorScheme = isDarkMode ? "light" : "dark";
-    //     localStorage.setItem("theme", isDarkMode ? "dark" : "light");
-    // };
+    const handleToggle = () => {
+        htmlRootElement.classList.toggle("light");
 
-    // toggleThemeButton.addEventListener("click", handleToggle);
+        const isDark = !htmlRootElement.classList.contains("light");
+
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+    };
+
+    toggleThemeButton.addEventListener("click", handleToggle);
 };
 
 export default initHeader;
