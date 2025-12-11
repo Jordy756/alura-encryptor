@@ -17,6 +17,23 @@ const { title } = Astro.props;
         <meta name="viewport" content="width=device-width" />
         <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
         <title>{title}</title>
+
+        <script is:inline>
+            const htmlRootElement = document.documentElement;
+
+            const theme = (() => {
+                const localStorageTheme = localStorage?.getItem("theme") ?? "";
+
+                if (["dark", "light"].includes(localStorageTheme)) return localStorageTheme;
+                if (window.matchMedia("(prefers-color-scheme: dark)").matches) return "dark";
+
+                return "light";
+            })();
+
+            if (theme === "light") htmlRootElement.classList.add("light");
+
+            window.localStorage.setItem("theme", theme);
+        </script>
     </head>
     <body>
         <div class="root">
@@ -143,7 +160,7 @@ const { title } = Astro.props;
     }
 
     dialog {
-        background: white;
+        background: light-dark(var(--neutral-50), var(--neutral-900));
         border: none;
     }
 
@@ -157,6 +174,9 @@ const { title } = Astro.props;
         line-height: 1.7;
         background-color: light-dark(var(--neutral-50), var(--neutral-900));
         color: light-dark(var(--neutral-900), var(--neutral-50));
+        transition:
+            background-color 0.3s ease-in-out,
+            color 0.3s ease-in-out;
     }
 
     :is(h1, h2, h3, h4, h5, h6) {

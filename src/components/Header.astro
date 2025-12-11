@@ -5,7 +5,7 @@ import ToggleThemeIcon from "./icons/ToggleThemeIcon.astro";
 <header>
     <nav>
         <h1>AluEncrypt</h1>
-        <button id="toggle-theme-btn" aria-label="Toggle theme">
+        <button id="toggle-theme-btn" aria-label="Cambiar tema" title="Cambiar tema">
             <ToggleThemeIcon width={24} />
         </button>
     </nav>
@@ -17,6 +17,7 @@ import ToggleThemeIcon from "./icons/ToggleThemeIcon.astro";
         justify-content: center;
         padding: 1rem;
         border-bottom: 1px solid light-dark(var(--neutral-200), var(--neutral-800));
+        transition: border-color 0.3s ease-in-out;
     }
 
     header > nav {

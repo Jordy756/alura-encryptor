@@ -22,9 +22,11 @@ const { width = 20, className = "" } = Astro.props;
 <style>
     .sun {
         fill: light-dark(var(--neutral-900), transparent);
+        transition: fill 0.3s ease-in-out;
     }
 
     .moon {
         fill: light-dark(transparent, var(--neutral-50));
+        transition: fill 0.3s ease-in-out;
     }
 </style>
