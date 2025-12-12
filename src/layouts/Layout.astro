@@ -15,8 +15,14 @@ const { title } = Astro.props;
         <meta charset="UTF-8" />
         <meta name="description" content="Astro description" />
         <meta name="viewport" content="width=device-width" />
-        <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <title>{title}</title>
+
+        <!-- <meta property="og:url" content={url} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={summary} />
+        <meta property="og:image" content={ogImage} /> -->
 
         <script is:inline src="/src/utils/handleTheme.ts"></script>
     </head>
@@ -49,6 +55,8 @@ const { title } = Astro.props;
         --neutral-800: #2b2b30;
         --neutral-900: #161618;
         --primary-500: #ea4c89;
+
+        --success-500: #4caf50;
 
         --border-radius-out: 5px;
         --border-radius-in: 2.5px;
