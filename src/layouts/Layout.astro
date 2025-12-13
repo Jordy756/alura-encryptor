@@ -9,6 +9,8 @@ interface Props {
 }
 
 const { title } = Astro.props;
+const url = Astro.url;
+const hostname = url.hostname;
 const description =
     "Encripta y desencripta mensajes fácilmente con AluEncrypt. Un desafío del programa Oracle Next Education (ONE) y Alura Latam.";
 const ogImageUrl = "https://res.cloudinary.com/dygwpgeq9/image/upload/v1765612000/alu_encrypt_img_01_a1oxmq.webp";
@@ -23,15 +25,15 @@ const ogImageUrl = "https://res.cloudinary.com/dygwpgeq9/image/upload/v176561200
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <title>{title}</title>
 
-        <meta property="og:url" content={Astro.url} />
+        <meta property="og:url" content={url} />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={ogImageUrl} />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content={Astro.url.hostname} />
-        <meta property="twitter:url" content={Astro.url} />
+        <meta property="twitter:domain" content={hostname} />
+        <meta property="twitter:url" content={url} />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={ogImageUrl} />
