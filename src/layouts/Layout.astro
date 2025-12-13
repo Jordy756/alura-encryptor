@@ -18,12 +18,30 @@ const { title } = Astro.props;
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <title>{title}</title>
 
-        <!-- <meta property="og:url" content={url} />
+        <meta property="og:url" content={Astro.url} />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
-        <meta property="og:description" content={summary} />
-        <meta property="og:image" content={ogImage} /> -->
+        <meta
+            property="og:description"
+            content="Encripta y desencripta mensajes fácilmente con AluEncrypt. Un desafío del programa Oracle Next Education (ONE) y Alura Latam."
+        />
+        <meta
+            property="og:image"
+            content="https://res.cloudinary.com/dygwpgeq9/image/upload/v1765612000/alu_encrypt_img_01_a1oxmq.webp"
+        />
 
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content={Astro.url.hostname} />
+        <meta property="twitter:url" content={Astro.url} />
+        <meta name="twitter:title" content={title} />
+        <meta
+            name="twitter:description"
+            content="Encripta y desencripta mensajes fácilmente con AluEncrypt. Un desafío del programa Oracle Next Education (ONE) y Alura Latam."
+        />
+        <meta
+            name="twitter:image"
+            content="https://res.cloudinary.com/dygwpgeq9/image/upload/v1765612000/alu_encrypt_img_01_a1oxmq.webp"
+        />
         <script is:inline src="/src/utils/handleTheme.ts"></script>
     </head>
     <body>
@@ -54,7 +72,17 @@ const { title } = Astro.props;
         --neutral-700: #565660;
         --neutral-800: #2b2b30;
         --neutral-900: #161618;
+
+        --primary-50: #ffe3ea;
+        --primary-100: #fec8d6;
+        --primary-200: #fbabc2;
+        --primary-300: #f78eaf;
+        --primary-400: #f16f9c;
         --primary-500: #ea4c89;
+        --primary-600: #bf4171;
+        --primary-700: #96375a;
+        --primary-800: #6f2c43;
+        --primary-900: #4a202e;
 
         --success-500: #4caf50;
 
@@ -165,6 +193,7 @@ const { title } = Astro.props;
         font-family: var(--font-family);
         font-size: var(--text-size-base);
         line-height: 1.7;
+        text-wrap: pretty;
         background-color: light-dark(var(--neutral-50), var(--neutral-900));
         color: light-dark(var(--neutral-900), var(--neutral-50));
         transition:
@@ -175,6 +204,7 @@ const { title } = Astro.props;
     :is(h1, h2, h3, h4, h5, h6) {
         font-weight: 600;
         line-height: 1.2;
+        text-wrap: balance;
     }
 
     .root {
