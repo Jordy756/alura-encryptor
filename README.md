@@ -1,4 +1,4 @@
-# AluEncrypt - Encriptador de Texto
+# AluEncrypt - Encriptador de Texto - Grupo 05
 
 ![AluEncrypt Banner](https://res.cloudinary.com/dygwpgeq9/image/upload/v1765612000/alu_encrypt_img_01_a1oxmq.webp)
 
@@ -15,7 +15,7 @@
 
 **AluEncrypt** es una aplicación web diseñada para encriptar y desencriptar mensajes de texto. Este proyecto forma parte del primer desafío del programa **Oracle Next Education (ONE)** en alianza con **Alura Latam**.
 
-El objetivo principal es poner en práctica los conocimientos adquiridos en lógica de programación con JavaScript, manipulación del DOM y maquetación web, llevándolos al siguiente nivel utilizando tecnologías modernas como **Astro**.
+Aunque este desafío fue completado originalmente en **2023**, esta versión representa un **re-work completo realizado en 2025**. El objetivo de esta reconstrucción fue aplicar la experiencia ganada durante estos años y llevar el proyecto al siguiente nivel, migrando de HTML/JS vainilla a tecnologías modernas como **Astro** y **TypeScript**.
 
 ### 🔑 Llaves de Encriptación
 
@@ -34,7 +34,7 @@ Las "llaves" de encriptación utilizadas son las siguientes:
 
 ## 📸 Capturas de Pantalla
 
-| Vista Principal | Modo Oscuro / Resultado |
+| Vista Principal | Modo Claro |
 |:---:|:---:|
 | ![Vista Principal](https://res.cloudinary.com/dygwpgeq9/image/upload/v1765612000/alu_encrypt_img_01_a1oxmq.webp) | ![Resultado](https://res.cloudinary.com/dygwpgeq9/image/upload/v1765612000/alu_encrypt_img_02_tn2mnz.webp) |
 
