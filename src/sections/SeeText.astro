@@ -41,8 +41,7 @@ import DocumentIcon from "@components/icons/DocumentIcon.astro";
     }
 
     section > span,
-    section > div,
-    section > :global(button.primary) {
+    section > div {
         transition:
             opacity 0.3s ease-in-out,
             display 0.3s ease-in-out allow-discrete;
@@ -88,6 +87,14 @@ import DocumentIcon from "@components/icons/DocumentIcon.astro";
         margin-top: auto;
         border-radius: var(--border-radius-in);
         display: flex;
+        transition:
+            opacity 0.3s ease-in-out,
+            background-color 0.3s ease-in-out,
+            display 0.3s ease-in-out allow-discrete;
+    }
+
+    section > :global(button.primary.success) {
+        background-color: var(--success-500);
     }
 
     section > span:empty ~ :global(button.primary) {

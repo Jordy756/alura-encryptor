@@ -7,12 +7,12 @@ const initSeeText = (): void => {
         navigator.clipboard.writeText(outputField.textContent);
 
         copyTextButton.textContent = "Copiado!";
-        copyButton.style.backgroundColor = "var(--success-500)";
+        copyButton.classList.add("success");
 
         setTimeout(() => {
             copyTextButton.textContent = "Copiar";
-            copyButton.style.backgroundColor = "var(--primary-500)";
-        }, 1000);
+            copyButton.classList.remove("success");
+        }, 500);
     };
 
     copyButton.addEventListener("click", copyToClipboard);
