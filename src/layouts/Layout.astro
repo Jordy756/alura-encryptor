@@ -20,11 +20,13 @@ const ogImageUrl = "https://res.cloudinary.com/dygwpgeq9/image/upload/v176561200
 <html lang="es">
     <head>
         <meta charset="UTF-8" />
-        <meta name="description" content="Astro description" />
         <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <title>{title}</title>
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
+        <slot name="head" />
+
+        <meta name="description" content={description} />
         <meta property="og:url" content={url} />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
@@ -37,10 +39,12 @@ const ogImageUrl = "https://res.cloudinary.com/dygwpgeq9/image/upload/v176561200
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={ogImageUrl} />
+
         <script is:inline set:html={themeScript} />
     </head>
     <body>
         <div class="root">
+            
             <slot />
         </div>
     </body>
