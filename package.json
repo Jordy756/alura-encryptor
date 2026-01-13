@@ -1,22 +1,21 @@
 {
-    "name": "alura-encryptor",
-    "type": "module",
-    "version": "0.0.1",
-    "scripts": {
-        "dev": "astro dev --open",
-        "start": "astro dev",
-        "build": "astro check && astro build",
-        "preview": "astro preview",
-        "astro": "astro"
-    },
-    "dependencies": {
-        "@astrojs/check": "0.9.6",
-        "@fontsource/montserrat": "^5.2.8",
-        "astro": "^5.16.5",
-        "typescript": "^5.5.4"
-    },
-    "devDependencies": {
-        "prettier": "^3.3.3",
-        "prettier-plugin-astro": "^0.14.1"
-    }
+  "name": "alura-encryptor",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev --open",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "0.9.6",
+    "astro": "^5.16.9",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "prettier": "^3.7.4",
+    "prettier-plugin-astro": "^0.14.1"
+  }
 }

@@ -2,66 +2,66 @@
 import type { HTMLAttributes } from "astro/types";
 
 interface Props extends HTMLAttributes<"button"> {
-    variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary";
 }
 
 const { variant = "primary", class: className, ...props } = Astro.props;
 ---
 
 <button class:list={[variant, className]} {...props}>
-    <slot />
+  <slot />
 </button>
 
 <style>
-    button {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 0.5rem;
-        font-weight: 600;
-        border-radius: var(--border-radius-out);
-        text-align: center;
+  button {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    border-radius: var(--border-radius-out);
+    text-align: center;
+  }
+
+  .primary {
+    padding: 16px 32px;
+    background-color: var(--primary-500);
+    color: var(--neutral-50);
+    transition: opacity 0.3s ease-in-out;
+
+    &:hover {
+      opacity: 0.8;
     }
 
-    .primary {
-        padding: 16px 32px;
-        background-color: var(--primary-500);
-        color: var(--neutral-50);
-        transition: opacity 0.3s ease-in-out;
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+  }
 
-        &:hover {
-            opacity: 0.8;
-        }
+  .primary.success {
+    background-color: var(--success-500);
+  }
 
-        &:disabled {
-            cursor: not-allowed;
-            opacity: 0.6;
-        }
+  .secondary {
+    padding: 15px 31px;
+    color: light-dark(var(--neutral-700), var(--neutral-400));
+    border: 1px solid light-dark(var(--neutral-200), var(--neutral-800));
+    transition:
+      color 0.1s ease-in-out,
+      border-color 0.3s ease-in-out;
+
+    &:hover {
+      color: light-dark(var(--neutral-900), var(--neutral-50));
+      border-color: light-dark(var(--neutral-900), var(--neutral-50));
     }
 
-    .primary.success {
-        background-color: var(--success-500);
+    &:disabled {
+      cursor: not-allowed;
+      color: light-dark(var(--neutral-700), var(--neutral-400));
+      border-color: light-dark(var(--neutral-200), var(--neutral-800));
+      opacity: 0.6;
     }
-
-    .secondary {
-        padding: 15px 31px;
-        color: light-dark(var(--neutral-700), var(--neutral-400));
-        border: 1px solid light-dark(var(--neutral-200), var(--neutral-800));
-        transition:
-            color 0.1s ease-in-out,
-            border-color 0.3s ease-in-out;
-
-        &:hover {
-            color: light-dark(var(--neutral-900), var(--neutral-50));
-            border-color: light-dark(var(--neutral-900), var(--neutral-50));
-        }
-
-        &:disabled {
-            cursor: not-allowed;
-            color: light-dark(var(--neutral-700), var(--neutral-400));
-            border-color: light-dark(var(--neutral-200), var(--neutral-800));
-            opacity: 0.6;
-        }
-    }
+  }
 </style>

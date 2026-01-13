@@ -1,18 +1,18 @@
 const initTheme = () => {
-    const htmlRootElement = document.documentElement;
+  const htmlRootElement = document.documentElement;
 
-    const theme = (() => {
-        const localStorageTheme = localStorage?.getItem("theme") ?? "";
+  const theme = (() => {
+    const localStorageTheme = localStorage?.getItem("theme") ?? "";
 
-        if (["dark", "light"].includes(localStorageTheme)) return localStorageTheme;
-        if (window.matchMedia("(prefers-color-scheme: dark)").matches) return "dark";
+    if (["dark", "light"].includes(localStorageTheme)) return localStorageTheme;
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) return "dark";
 
-        return "light";
-    })();
+    return "light";
+  })();
 
-    if (theme === "light") htmlRootElement.classList.add("light");
+  if (theme === "light") htmlRootElement.classList.add("light");
 
-    window.localStorage.setItem("theme", theme);
+  window.localStorage.setItem("theme", theme);
 };
 
 initTheme();
