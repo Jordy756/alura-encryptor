@@ -1,4 +1,4 @@
-import { decrypt, encrypt } from "@scripts/utils/handleEncryption";
+import { decrypt, encrypt } from "@scripts/utils/encryption";
 
 (() => {
   const encryptButton = document.getElementById("btn-encrypt") as HTMLButtonElement;

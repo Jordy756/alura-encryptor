@@ -4,115 +4,29 @@ import Button from "@components/ui/Button.astro";
 import DocumentIcon from "@components/icons/Document.astro";
 ---
 
-<section class="see-text-section">
-  <span id="output-text"></span>
-  <div>
-    <figure>
+<section
+  class="relative flex min-h-100 flex-[1_1_250px] flex-col gap-4 overflow-hidden rounded-sm border border-neutral-200 bg-neutral-50 p-4 transition-[border-color,background-color] duration-300 ease-in-out dark:border-neutral-800 dark:bg-neutral-900 [&>#output-text:empty~button]:pointer-events-none [&>#output-text:empty~button]:hidden [&>#output-text:empty~button]:opacity-0 [&>#output-text:not(:empty)+div]:hidden [&>#output-text:not(:empty)+div]:opacity-0"
+>
+  <span
+    id="output-text"
+    class="hidden wrap-anywhere opacity-0 transition-[opacity,display] transition-discrete duration-300 ease-in-out not-empty:block not-empty:opacity-100"
+  ></span>
+  <div
+    class="flex flex-1 flex-col items-center justify-center gap-2 text-center transition-[opacity,display] transition-discrete duration-300 ease-in-out"
+  >
+    <figure class="flex size-24 items-center justify-center rounded-full bg-(--primary-500)/10 text-(--primary-500)">
       <DocumentIcon class="h-16 w-16" />
     </figure>
-    <h2>Ningún mensaje fue encontrado</h2>
+    <h2 class="text-2xl">Ningún mensaje fue encontrado</h2>
     <p>Ingresa el texto que desees encriptar o desencriptar.</p>
   </div>
-  <Button id="btn-copy-to-clipboard">
-    <CopyIcon class="w-6 h-6" />
+  <Button
+    id="btn-copy-to-clipboard"
+    class="mt-auto flex-none rounded-xs transition-[background-color,border-color,opacity] duration-300 ease-in-out [&.success]:border-green-500 [&.success]:bg-green-500"
+  >
+    <CopyIcon class="h-6 w-6" />
     <span>Copiar</span>
   </Button>
 </section>
 
-<style>
-  .see-text-section {
-    flex: 1 250px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
-    min-height: 400px;
-    border-radius: var(--border-radius-out);
-    background-color: light-dark(var(--neutral-100), var(--neutral-800));
-    border: 1px solid light-dark(var(--neutral-200), var(--neutral-700));
-    overflow: hidden;
-    transition:
-      border-color var(--transition-theme),
-      background-color var(--transition-theme);
-  }
-
-  .see-text-section > span {
-    display: none;
-    overflow-wrap: anywhere;
-    opacity: 0;
-  }
-
-  .see-text-section > span,
-  .see-text-section > div {
-    transition:
-      opacity 0.3s ease-in-out,
-      display 0.3s ease-in-out allow-discrete;
-  }
-
-  .see-text-section > span:not(:empty) {
-    display: block;
-    opacity: 1;
-  }
-
-  .see-text-section > div {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    text-align: center;
-  }
-
-  .see-text-section > span:not(:empty) + div {
-    opacity: 0;
-    display: none;
-  }
-
-  .see-text-section > div > figure {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 96px;
-    height: 96px;
-    color: var(--primary-500);
-    background-color: #ea4c891a;
-    border-radius: 9999999px;
-  }
-
-  .see-text-section > div > h2 {
-    font-size: var(--text-size-medium);
-  }
-
-  .see-text-section > :global(button.primary) {
-    flex: none;
-    margin-top: auto;
-    border-radius: var(--border-radius-in);
-    display: flex;
-    transition:
-      opacity 0.3s ease-in-out,
-      background-color 0.3s ease-in-out,
-      display 0.3s ease-in-out allow-discrete;
-  }
-
-  .see-text-section > :global(button.primary.success) {
-    background-color: var(--success-500);
-  }
-
-  .see-text-section > span:empty ~ :global(button.primary) {
-    opacity: 0;
-    display: none;
-    pointer-events: none;
-  }
-
-  @starting-style {
-    .see-text-section > span:not(:empty),
-    .see-text-section > div,
-    .see-text-section > :global(button.primary) {
-      opacity: 0;
-    }
-  }
-</style>
-
-<!-- <script src="../scripts/sections/seeText.ts"></script> -->
+<script src="../../scripts/lib/seeText.ts"></script>

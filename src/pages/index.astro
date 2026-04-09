@@ -12,21 +12,9 @@ const description =
 
 <Layout title={title} description={description}>
   <Header />
-  <main>
+  <main class="mx-auto flex w-[min(calc(var(--max-width)+2rem),100%)] flex-1 flex-wrap gap-12 p-4">
     <WriteText />
     <SeeText />
   </main>
   <Footer />
 </Layout>
-
-<style>
-  main {
-    flex: 1;
-    align-self: center;
-    padding: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 3rem;
-    width: min(calc(var(--max-width) + 2rem), 100%);
-  }
-</style>
