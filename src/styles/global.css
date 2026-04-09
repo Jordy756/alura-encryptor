@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   /* Primary Colors */
   --primary-50: #ffe3ea;
@@ -17,8 +19,8 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-unbounded);
-  --font-mono: var(--font-poppins);
+  --font-sans: var(--font-montserrat);
+  --font-mono: var(--font-montserrat);
 }
 
 @layer base {
@@ -43,10 +45,17 @@
 
 @layer components {
   .btn-primary {
-    @apply border-(--primary-500) bg-(--primary-500) text-neutral-50 transition-[background-color,color,border-color] hover:border-(--primary-300) hover:bg-(--primary-300) hover:text-neutral-950;
+    @apply border-(--primary-500) bg-(--primary-500) font-semibold text-neutral-50 transition-opacity hover:opacity-80;
   }
 
   .btn-secondary {
-    @apply border-neutral-50 bg-neutral-50 text-neutral-950 transition-opacity hover:opacity-80;
+    @apply border-neutral-200 text-neutral-950 transition-[opacity,border-color,color] duration-300 hover:opacity-80 dark:border-neutral-700 dark:text-neutral-50;
   }
 }
+
+/*
+
+  .primary.success {
+    background-color: var(--success-500);
+  }
+     */

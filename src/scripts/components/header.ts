@@ -3,9 +3,9 @@
   const toggleThemeButton = document.getElementById("toggle-theme-btn") as HTMLButtonElement;
 
   const handleToggle = () => {
-    htmlRootElement.classList.toggle("light");
+    htmlRootElement.classList.toggle("dark");
 
-    const isDark = !htmlRootElement.classList.contains("light");
+    const isDark = htmlRootElement.classList.contains("dark");
 
     localStorage.setItem("theme", isDark ? "dark" : "light");
   };

@@ -3,9 +3,11 @@ import ToggleThemeIcon from "@components/icons/ToggleTheme.astro";
 import Image from "astro/components/Image.astro";
 ---
 
-<header>
-  <h1>AluEncrypt</h1>
-  <nav>
+<header
+  class="flex justify-center border-b border-neutral-200 p-4 transition-[border-color] duration-300 ease-in-out dark:border-neutral-700"
+>
+  <h1 class="sr-only">AluEncrypt</h1>
+  <nav class="flex w-[min(var(--max-width),100%)] items-center justify-between gap-8">
     <a href="/#">
       <Image src="/favicon.svg" alt="Ícono de AluEncrypt" width={40} height={40} />
     </a>
@@ -15,41 +17,4 @@ import Image from "astro/components/Image.astro";
   </nav>
 </header>
 
-<style>
-  header {
-    display: flex;
-    justify-content: center;
-    padding: 1rem;
-    border-bottom: 1px solid light-dark(var(--neutral-200), var(--neutral-800));
-    transition: border-color var(--transition-theme);
-  }
-
-  header > h1 {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-  }
-
-  header > nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    width: min(var(--max-width), 100%);
-  }
-
-  header > nav > a,
-  header > nav > a > img,
-  header > nav > button {
-    display: flex;
-  }
-
-  header > nav {
-    font-size: var(--text-size-xlarge);
-  }
-</style>
-
-<!-- <script src="../scripts/components/header.ts"></script> -->
+<script src="../../scripts/components/header.ts"></script>

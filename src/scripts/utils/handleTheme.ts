@@ -10,7 +10,7 @@ const initTheme = () => {
     return "light";
   })();
 
-  if (theme === "light") htmlRootElement.classList.add("light");
+  htmlRootElement.classList.toggle("dark", theme === "dark");
 
   window.localStorage.setItem("theme", theme);
 };
