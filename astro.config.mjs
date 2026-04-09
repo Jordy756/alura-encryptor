@@ -1,22 +1,26 @@
 import { defineConfig, fontProviders } from "astro/config";
 
+import tailwindcss from "@tailwindcss/vite";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://alura-encryptor.vercel.app",
 
-  experimental: {
-    fonts: [
-      {
-        name: "Montserrat",
-        cssVariable: "--font-montserrat",
-        provider: fontProviders.google(),
-        weights: [400, 600],
-        styles: ["normal"],
-        subsets: ["latin"],
-        display: "swap",
-        formats: ["woff2"],
-        fallbacks: ["sans-serif", "system-ui"],
-      },
-    ],
+  fonts: [
+    {
+      name: "Montserrat",
+      cssVariable: "--font-montserrat",
+      provider: fontProviders.google(),
+      weights: [400, 600],
+      styles: ["normal"],
+      subsets: ["latin"],
+      display: "swap",
+      formats: ["woff2"],
+      fallbacks: ["sans-serif", "system-ui"],
+    },
+  ],
+
+  vite: {
+    plugins: [tailwindcss()],
   },
 });

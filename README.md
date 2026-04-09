@@ -34,8 +34,8 @@ Las "llaves" de encriptación utilizadas son las siguientes:
 
 ## 📸 Capturas de Pantalla
 
-| Vista Principal | Modo Claro |
-|:---:|:---:|
+|                                                 Vista Principal                                                  |                                                 Modo Claro                                                 |
+| :--------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------: |
 | ![Vista Principal](https://res.cloudinary.com/dygwpgeq9/image/upload/v1765612000/alu_encrypt_img_01_a1oxmq.webp) | ![Resultado](https://res.cloudinary.com/dygwpgeq9/image/upload/v1765612000/alu_encrypt_img_02_tn2mnz.webp) |
 
 ## ✨ Funcionalidades
@@ -89,6 +89,7 @@ Si deseas correr este proyecto localmente, sigue estos pasos:
 **Jordy756**
 
 ---
+
 <div align="center">
   Desarrollado con 💙 durante el programa Oracle Next Education
 </div>

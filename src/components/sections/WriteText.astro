@@ -1,6 +1,6 @@
 ---
-import Button from "@components/Button.astro";
-import WarningIcon from "@components/icons/WarningIcon.astro";
+import Button from "@components/ui/Button.astro";
+import WarningIcon from "@components/icons/Warning.astro";
 ---
 
 <section class="write-text-section">
@@ -9,7 +9,7 @@ import WarningIcon from "@components/icons/WarningIcon.astro";
     <textarea id="input-text" placeholder="Ingresa el texto a encriptar o desencriptar"></textarea>
   </div>
   <span>
-    <WarningIcon />
+    <WarningIcon class="w-5 h-5" />
     Solo letras minúsculas y sin acento
   </span>
   <div class="buttons-container">
@@ -63,4 +63,4 @@ import WarningIcon from "@components/icons/WarningIcon.astro";
   }
 </style>
 
-<script src="../scripts/sections/writeText.ts"></script>
+<!-- <script src="../scripts/sections/writeText.ts"></script> -->

@@ -1,14 +1,14 @@
 ---
-import CopyIcon from "@icons/CopyIcon.astro";
-import Button from "@components/Button.astro";
-import DocumentIcon from "@components/icons/DocumentIcon.astro";
+import CopyIcon from "@components/icons/Copy.astro";
+import Button from "@components/ui/Button.astro";
+import DocumentIcon from "@components/icons/Document.astro";
 ---
 
 <section class="see-text-section">
   <span id="output-text"></span>
   <div>
     <figure>
-      <DocumentIcon width={64} />
+      <DocumentIcon class="h-16 w-16" />
     </figure>
     <h2>Ningún mensaje fue encontrado</h2>
     <p>Ingresa el texto que desees encriptar o desencriptar.</p>
@@ -115,4 +115,4 @@ import DocumentIcon from "@components/icons/DocumentIcon.astro";
   }
 </style>
 
-<script src="../scripts/sections/seeText.ts"></script>
+<!-- <script src="../scripts/sections/seeText.ts"></script> -->

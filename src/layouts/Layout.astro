@@ -1,16 +1,16 @@
 ---
-import themeScript from "@utils/handleTheme.ts?raw";
+import "@styles/global.css";
+import themeScript from "@scripts/utils/handleTheme.ts?raw";
 import { Font } from "astro:assets";
 
 interface Props {
   title: string;
+  description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 const url = Astro.url;
 const hostname = url.hostname;
-const description =
-  "Encripta y desencripta mensajes fácilmente con AluEncrypt. Un desafío del programa Oracle Next Education (ONE) y Alura Latam.";
 const ogImageUrl = "https://res.cloudinary.com/dygwpgeq9/image/upload/v1765612000/alu_encrypt_img_01_a1oxmq.webp";
 ---
 
@@ -60,34 +60,10 @@ const ogImageUrl = "https://res.cloudinary.com/dygwpgeq9/image/upload/v176561200
     --text-size-small: clamp(1.125rem, 1.5vw + 1rem, 1.25rem);
     --text-size-base: 1rem;
 
-    --neutral-50: #fbfbfc;
-    --neutral-100: #f3f3f5;
-    --neutral-200: #e8e8ea;
-    --neutral-300: #dcdce0;
-    --neutral-400: #d1d1d6;
-    --neutral-500: #b2b2ba;
-    --neutral-600: #a0a0b0;
-    --neutral-700: #565660;
-    --neutral-800: #2b2b30;
-    --neutral-900: #161618;
-
-    --primary-50: #ffe3ea;
-    --primary-100: #fec8d6;
-    --primary-200: #fbabc2;
-    --primary-300: #f78eaf;
-    --primary-400: #f16f9c;
-    --primary-500: #ea4c89;
-    --primary-600: #bf4171;
-    --primary-700: #96375a;
-    --primary-800: #6f2c43;
-    --primary-900: #4a202e;
-
     --success-500: #4caf50;
 
     --border-radius-out: 5px;
     --border-radius-in: 2.5px;
-
-    --max-width: 1200px;
 
     --transition-theme: 0.3s ease-in-out;
 
@@ -96,97 +72,6 @@ const ogImageUrl = "https://res.cloudinary.com/dygwpgeq9/image/upload/v176561200
 
   :root.light {
     color-scheme: light;
-  }
-
-  *,
-  *::before,
-  *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  article,
-  aside,
-  details,
-  dialog,
-  figcaption,
-  figure,
-  footer,
-  header,
-  hgroup,
-  main,
-  menu,
-  nav,
-  section,
-  summary,
-  template,
-  video,
-  audio,
-  canvas,
-  picture {
-    display: block;
-  }
-
-  ul,
-  ol {
-    padding-left: 0;
-    list-style: none;
-  }
-
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-
-  button,
-  input,
-  select,
-  textarea {
-    font-family: inherit;
-    font-size: inherit;
-    line-height: normal;
-    border: none;
-    background: none;
-    color: inherit;
-  }
-
-  button,
-  a,
-  input[type="button"],
-  input[type="reset"],
-  input[type="submit"],
-  input[type="checkbox"],
-  input[type="radio"] {
-    cursor: pointer;
-  }
-
-  table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-  }
-
-  blockquote,
-  q {
-    quotes: none;
-  }
-
-  blockquote::before,
-  blockquote::after,
-  q::before,
-  q::after {
-    content: "";
-    content: none;
-  }
-
-  dialog {
-    background: light-dark(var(--neutral-50), var(--neutral-900));
-    border: none;
-  }
-
-  template {
-    display: none;
   }
 
   body {

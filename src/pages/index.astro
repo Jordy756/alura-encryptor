@@ -1,12 +1,16 @@
 ---
-import Footer from "@components/Footer.astro";
-import Header from "@components/Header.astro";
+import Footer from "@components/layout/Footer.astro";
+import Header from "@components/layout/Header.astro";
 import Layout from "@layouts/Layout.astro";
-import SeeText from "@sections/SeeText.astro";
-import WriteText from "@sections/WriteText.astro";
+import SeeText from "@components/sections/SeeText.astro";
+import WriteText from "@components/sections/WriteText.astro";
+
+const title = "Alura Encryptor - Encriptador de textos";
+const description =
+  "Encripta y desencripta mensajes fácilmente con AluEncrypt. Un desafío del programa Oracle Next Education (ONE) y Alura Latam.";
 ---
 
-<Layout title="AluEncrypt - Encriptador de textos">
+<Layout title={title} description={description}>
   <Header />
   <main>
     <WriteText />
