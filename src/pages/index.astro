@@ -8,6 +8,7 @@ import WriteText from "@components/sections/WriteText.astro";
 const title = "Alura Encryptor - Encriptador de textos";
 const description =
   "Encripta y desencripta mensajes fácilmente con AluEncrypt. Un desafío del programa Oracle Next Education (ONE) y Alura Latam.";
+const pageUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url).href;
 ---
 
 <Layout title={title} description={description}>

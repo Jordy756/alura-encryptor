@@ -1,6 +1,8 @@
 (() => {
-  const htmlRootElement = document.documentElement as HTMLHtmlElement;
-  const toggleThemeButton = document.getElementById("toggle-theme-btn") as HTMLButtonElement;
+  const htmlRootElement = document.documentElement;
+  const toggleThemeButton = document.getElementById("toggle-theme-btn");
+
+  if (!(toggleThemeButton instanceof HTMLButtonElement)) return;
 
   const handleToggle = () => {
     htmlRootElement.classList.toggle("dark");

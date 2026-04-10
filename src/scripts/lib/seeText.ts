@@ -1,18 +1,31 @@
 (() => {
-  const copyButton = document.getElementById("btn-copy-to-clipboard") as HTMLButtonElement;
-  const copyTextButton = copyButton.querySelector("span") as HTMLSpanElement;
-  const outputField = document.getElementById("output-text") as HTMLSpanElement;
+  const copyButton = document.getElementById("btn-copy-to-clipboard");
+  const outputField = document.getElementById("output-text");
 
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(outputField.textContent);
+  if (!(copyButton instanceof HTMLButtonElement) || !(outputField instanceof HTMLSpanElement)) return;
 
-    copyTextButton.textContent = "Copiado!";
-    copyButton.classList.add("success");
+  const copyTextButton = copyButton.querySelector<HTMLSpanElement>("span");
 
-    setTimeout(() => {
-      copyTextButton.textContent = "Copiar";
-      copyButton.classList.remove("success");
-    }, 500);
+  if (!copyTextButton) return;
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(outputField.textContent ?? "");
+
+      copyTextButton.textContent = "Copiado!";
+      copyButton.classList.add("success");
+
+      setTimeout(() => {
+        copyTextButton.textContent = "Copiar";
+        copyButton.classList.remove("success");
+      }, 500);
+    } catch {
+      copyTextButton.textContent = "Error al copiar";
+
+      setTimeout(() => {
+        copyTextButton.textContent = "Copiar";
+      }, 1200);
+    }
   };
 
   copyButton.addEventListener("click", copyToClipboard);

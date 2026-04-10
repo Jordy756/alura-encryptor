@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alura-encryptor.vercel.app/sitemap-index.xml
