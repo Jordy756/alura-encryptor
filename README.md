@@ -1,13 +1,13 @@
-# AluEncrypt - Encriptador de Texto - Grupo 05
+# Alura Encryptor
 
-![AluEncrypt Banner](https://res.cloudinary.com/dygwpgeq9/image/upload/v1765612000/alu_encrypt_img_01_a1oxmq.webp)
+![Alura Encryptor Banner](https://res.cloudinary.com/dygwpgeq9/image/upload/q_auto/f_auto/v1775784152/alura_encryptor_dark_og_img_ocfkkk.webp)
 
 <div align="center">
 
-![Astro](https://img.shields.io/badge/astro-%232C2052.svg?style=for-the-badge&logo=astro&logoColor=white)
-![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![Astro](https://img.shields.io/badge/Astro-6.x-2C2052?style=for-the-badge&logo=astro&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind-4.x-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-6.x-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 </div>
 
@@ -34,9 +34,9 @@ Las "llaves" de encriptación utilizadas son las siguientes:
 
 ## 📸 Capturas de Pantalla
 
-|                                                 Vista Principal                                                  |                                                 Modo Claro                                                 |
-| :--------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------: |
-| ![Vista Principal](https://res.cloudinary.com/dygwpgeq9/image/upload/v1765612000/alu_encrypt_img_01_a1oxmq.webp) | ![Resultado](https://res.cloudinary.com/dygwpgeq9/image/upload/v1765612000/alu_encrypt_img_02_tn2mnz.webp) |
+| Vista principal | Modo claro |
+| --- | --- |
+| ![Vista principal](https://res.cloudinary.com/dygwpgeq9/image/upload/q_auto/f_auto/v1775784152/alura_encryptor_dark_og_img_ocfkkk.webp) | ![Modo claro](https://res.cloudinary.com/dygwpgeq9/image/upload/q_auto/f_auto/v1775784153/alura_encryptor_light_og_img_qnzbx2.webp) |
 
 ## ✨ Funcionalidades
 
@@ -84,12 +84,11 @@ Si deseas correr este proyecto localmente, sigue estos pasos:
 4. **Abrir en el navegador**
    Visita `http://localhost:4321` para ver la aplicación.
 
-## ✒️ Autor
+## 📜 Licencia
 
-**Jordy756**
+Este proyecto se distribuye bajo la licencia MIT de Jordy Castro.
 
----
-
-<div align="center">
-  Desarrollado con 💙 durante el programa Oracle Next Education
-</div>
+- Tipo: MIT License
+- Titular: Jordy Castro
+- Copyright: 2026
+- Texto completo: [LICENSE](LICENSE)
