@@ -6,13 +6,12 @@ import { Font } from "astro:assets";
 interface Props {
   title: string;
   description: string;
-  canonical?: string;
   robots?: string;
 }
 
-const { title, description, canonical, robots = "index, follow" } = Astro.props;
+const { title, description, robots = "index, follow" } = Astro.props;
 const url = Astro.url;
-const canonicalUrl = new URL(canonical ?? url.pathname, Astro.site ?? url).href;
+const canonicalUrl = new URL(url.pathname, Astro.site ?? url).href;
 const hostname = new URL(canonicalUrl).hostname;
 const ogImageUrl =
   "https://res.cloudinary.com/dygwpgeq9/image/upload/q_auto/f_auto/v1775784152/alura_encryptor_dark_og_img_ocfkkk.webp";
