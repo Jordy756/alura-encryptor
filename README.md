@@ -34,8 +34,8 @@ Las "llaves" de encriptación utilizadas son las siguientes:
 
 ## 📸 Capturas de Pantalla
 
-| Vista principal | Modo claro |
-| --- | --- |
+| Vista principal                                                                                                                         | Modo claro                                                                                                                          |
+| --------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | ![Vista principal](https://res.cloudinary.com/dygwpgeq9/image/upload/q_auto/f_auto/v1775784152/alura_encryptor_dark_og_img_ocfkkk.webp) | ![Modo claro](https://res.cloudinary.com/dygwpgeq9/image/upload/q_auto/f_auto/v1775784153/alura_encryptor_light_og_img_qnzbx2.webp) |
 
 ## ✨ Funcionalidades

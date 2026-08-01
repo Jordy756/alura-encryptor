@@ -17,4 +17,14 @@ import Image from "astro/components/Image.astro";
   </nav>
 </header>
 
-<script src="../../scripts/lib/header.ts"></script>
+<script>
+  (() => {
+    const themeToggle = document.getElementById("toggle-theme-btn");
+    if (!(themeToggle instanceof HTMLButtonElement)) return;
+
+    themeToggle.addEventListener("click", () => {
+      const isDark = document.documentElement.classList.toggle("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+  })();
+</script>

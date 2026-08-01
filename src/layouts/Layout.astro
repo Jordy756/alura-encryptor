@@ -1,6 +1,5 @@
 ---
 import "@styles/global.css";
-import themeScript from "@scripts/utils/theme.ts?raw";
 import { Font } from "astro:assets";
 
 interface Props {
@@ -51,7 +50,21 @@ const ogImageAlt = "Vista previa de Alura Encryptor para encriptar y desencripta
     <meta name="twitter:image" content={ogImageUrl} />
     <meta name="twitter:image:alt" content={ogImageAlt} />
 
-    <script is:inline set:html={themeScript} />
+    <script is:inline>
+      const applyTheme = () => {
+        const theme = (() => {
+          const localStorageTheme = localStorage?.getItem("theme") ?? "";
+          if (["dark", "light"].includes(localStorageTheme)) return localStorageTheme;
+          if (window.matchMedia("(prefers-color-scheme: dark)").matches) return "dark";
+          return "light";
+        })();
+
+        document.documentElement.classList.toggle("dark", theme === "dark");
+      };
+
+      applyTheme();
+      document.addEventListener("astro:after-swap", applyTheme);
+    </script>
   </head>
   <body
     class="bg-neutral-50 text-pretty text-neutral-950 transition-[background-color,color] duration-300 ease-in-out dark:bg-neutral-950 dark:text-neutral-50"
