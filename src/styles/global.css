@@ -1,9 +1,8 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  /* Primary Colors */
   --primary-50: #ffe3ea;
   --primary-100: #fec8d6;
   --primary-200: #fbabc2;
@@ -26,12 +25,12 @@
 @layer base {
   :root {
     interpolate-size: allow-keywords;
+    /*color-scheme: light;*/
+    @apply scroll-smooth scrollbar-thin scrollbar-track-transparent;
   }
 
-  *,
-  *::before,
-  *::after {
-    @apply scrollbar-thin scrollbar-track-transparent scroll-smooth;
+  :root.dark {
+    /*color-scheme: dark;*/
   }
 
   :is(h1, h2, h3, h4, h5, h6) {
@@ -44,11 +43,11 @@
 }
 
 @layer components {
-  .btn-primary {
+  .primary-btn {
     @apply border-(--primary-500) bg-(--primary-500) font-semibold text-neutral-50 transition-opacity hover:opacity-80;
   }
 
-  .btn-secondary {
-    @apply border-neutral-200 text-neutral-950 transition-[opacity,border-color,color] hover:opacity-80 dark:border-neutral-800 dark:text-neutral-50;
+  .secondary-btn {
+    @apply border-neutral-200 text-neutral-950 hover:opacity-80 dark:border-neutral-800 dark:text-neutral-50;
   }
 }

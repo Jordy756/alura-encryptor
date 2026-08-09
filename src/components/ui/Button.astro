@@ -1,17 +1,17 @@
 ---
-import type { HTMLAttributes } from "astro/types";
+import type { HTMLAttributes } from 'astro/types';
 
-interface Props extends HTMLAttributes<"button"> {
-  variant?: "primary" | "secondary";
+interface Props extends HTMLAttributes<'button'> {
+  variant?: 'primary-btn' | 'secondary-btn';
 }
 
-const { variant = "primary", class: className, ...props } = Astro.props;
+const { variant = 'primary-btn', class: className, ...props } = Astro.props;
 ---
 
 <button
   class:list={[
-    "flex items-center justify-center gap-2 rounded-sm border px-5.75 py-2.75 text-center font-semibold duration-300 ease-in-out disabled:cursor-not-allowed disabled:opacity-60",
-    `btn-${variant}`,
+    'flex items-center justify-center gap-2 rounded-sm border px-5.75 py-2.75 text-center font-semibold duration-300 ease-in-out disabled:cursor-not-allowed disabled:opacity-60',
+    variant,
     className,
   ]}
   {...props}

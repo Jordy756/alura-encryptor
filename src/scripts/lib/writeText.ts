@@ -1,10 +1,10 @@
-import { decrypt, encrypt } from "@scripts/utils/encryption";
+import { decrypt, encrypt } from '@scripts/utils/encryption';
 
 (() => {
-  const encryptButton = document.getElementById("btn-encrypt");
-  const decryptButton = document.getElementById("btn-decrypt");
-  const outputField = document.getElementById("output-text");
-  const inputField = document.getElementById("input-text");
+  const encryptButton = document.getElementById('btn-encrypt');
+  const decryptButton = document.getElementById('btn-decrypt');
+  const outputField = document.getElementById('output-text');
+  const inputField = document.getElementById('input-text');
 
   if (
     !(encryptButton instanceof HTMLButtonElement) ||
@@ -18,6 +18,6 @@ import { decrypt, encrypt } from "@scripts/utils/encryption";
   const handleEncrypt = () => encrypt(outputField, getText());
   const handleDecrypt = () => decrypt(outputField, getText());
 
-  encryptButton.addEventListener("click", handleEncrypt);
-  decryptButton.addEventListener("click", handleDecrypt);
+  encryptButton.addEventListener('click', handleEncrypt);
+  decryptButton.addEventListener('click', handleDecrypt);
 })();

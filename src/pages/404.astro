@@ -1,14 +1,14 @@
 ---
-import Footer from "@components/shell/Footer.astro";
-import Header from "@components/shell/Header.astro";
-import Link from "@components/ui/Link.astro";
-import Layout from "@layouts/Layout.astro";
+import Footer from '@components/shell/Footer.astro';
+import Header from '@components/shell/Header.astro';
+import Link from '@components/ui/Link.astro';
+import Layout from '@layouts/Layout.astro';
 
-const title = "404 - Página no encontrada";
-const description = "Lo sentimos, la página que buscas no existe.";
+const title = '404 - Página no encontrada';
+const description = 'Lo sentimos, la página que buscas no existe.';
 ---
 
-<Layout title={title} description={description} robots="noindex, nofollow">
+<Layout title={title} description={description}>
   <Header />
   <main class="relative flex flex-1 flex-col items-center justify-center gap-8 overflow-clip p-4">
     <h1
