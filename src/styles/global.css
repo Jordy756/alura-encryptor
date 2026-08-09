@@ -25,12 +25,12 @@
 @layer base {
   :root {
     interpolate-size: allow-keywords;
-    /*color-scheme: light;*/
+    color-scheme: light;
     @apply scroll-smooth scrollbar-thin scrollbar-track-transparent;
   }
 
   :root.dark {
-    /*color-scheme: dark;*/
+    color-scheme: dark;
   }
 
   :is(h1, h2, h3, h4, h5, h6) {
