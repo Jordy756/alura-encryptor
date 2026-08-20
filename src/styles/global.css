@@ -3,16 +3,16 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --primary-50: #ffe3ea;
-  --primary-100: #fec8d6;
-  --primary-200: #fbabc2;
-  --primary-300: #f78eaf;
-  --primary-400: #f16f9c;
-  --primary-500: #ea4c89;
-  --primary-600: #bf4171;
-  --primary-700: #96375a;
-  --primary-800: #6f2c43;
-  --primary-900: #4a202e;
+  --color-primary-50: #ffe3ea;
+  --color-primary-100: #fec8d6;
+  --color-primary-200: #fbabc2;
+  --color-primary-300: #f78eaf;
+  --color-primary-400: #f16f9c;
+  --color-primary-500: #ea4c89;
+  --color-primary-600: #bf4171;
+  --color-primary-700: #96375a;
+  --color-primary-800: #6f2c43;
+  --color-primary-900: #4a202e;
 
   --max-width: 1200px;
 }
@@ -44,7 +44,7 @@
 
 @layer components {
   .primary-btn {
-    @apply border-(--primary-500) bg-(--primary-500) font-semibold text-neutral-50 transition-opacity hover:opacity-80;
+    @apply border-primary-500 bg-primary-500 font-semibold text-neutral-50 transition-opacity hover:opacity-80;
   }
 
   .secondary-btn {
