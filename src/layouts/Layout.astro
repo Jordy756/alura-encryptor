@@ -8,9 +8,9 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
-const url = Astro.url;
-const canonicalUrl = new URL(url.pathname, Astro.site ?? url).href;
-const hostname = new URL(canonicalUrl).hostname;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const hostname = Astro.site?.hostname;
 const ogImageUrl =
   'https://res.cloudinary.com/dygwpgeq9/image/upload/q_auto/f_auto/v1775784152/alura_encryptor_dark_og_img_ocfkkk.webp';
 const ogImageAlt = 'Vista previa de Alura Encryptor para encriptar y desencriptar textos';
@@ -25,8 +25,6 @@ const ogImageAlt = 'Vista previa de Alura Encryptor para encriptar y desencripta
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="canonical" href={canonicalUrl} />
-
-    <slot name="head" />
 
     <Font cssVariable="--font-montserrat" preload />
 

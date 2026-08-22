@@ -26,7 +26,9 @@
   :root {
     interpolate-size: allow-keywords;
     color-scheme: light;
-    @apply scroll-smooth scrollbar-thin scrollbar-track-transparent;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
   }
 
   :root.dark {
@@ -34,20 +36,45 @@
   }
 
   :is(h1, h2, h3, h4, h5, h6) {
-    @apply font-semibold text-balance;
+    font-weight: 600;
+    text-wrap: balance;
   }
 
   :is(button, a) {
-    @apply cursor-pointer;
+    cursor: pointer;
   }
 }
 
 @layer components {
-  .primary-btn {
-    @apply border-primary-500 bg-primary-500 font-semibold text-neutral-50 transition-opacity hover:opacity-80;
+  .btn-primary {
+    background-color: var(--color-primary-500);
+    color: var(--color-neutral-50);
+    padding: --spacing(2.75) --spacing(5.75);
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid var(--color-primary-500);
+    border-radius: var(--radius-sm);
+    transition: opacity 0.3s var(--ease-in-out);
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 
-  .secondary-btn {
-    @apply border-neutral-200 text-neutral-950 hover:opacity-80 dark:border-neutral-800 dark:text-neutral-50;
+  .btn-secondary {
+    color: light-dark(var(--color-neutral-950), var(--color-neutral-50));
+    padding: --spacing(2.75) --spacing(5.75);
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid light-dark(var(--color-neutral-200), var(--color-neutral-800));
+    border-radius: var(--radius-sm);
+
+    transition: opacity 0.3s var(--ease-in-out),
+      border-color 0.3s var(--ease-in-out),
+      color 0.05s var(--ease-in-out);
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 }
