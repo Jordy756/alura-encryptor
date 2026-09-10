@@ -4,16 +4,12 @@ import Button from '@components/ui/Button.astro';
 import DocumentIcon from '@components/icons/Document.astro';
 ---
 
-<section
-  class="relative flex min-h-100 flex-[1_1_250px] flex-col gap-4 overflow-hidden rounded-sm border border-neutral-200 bg-neutral-100 p-4 transition-[border-color,background-color] duration-300 ease-in-out dark:border-neutral-800 dark:bg-neutral-900 [&>#output-text:empty~button]:pointer-events-none [&>#output-text:empty~button]:hidden [&>#output-text:empty~button]:opacity-0 [&>#output-text:not(:empty)+div]:hidden [&>#output-text:not(:empty)+div]:opacity-0"
->
+<section class="relative flex min-h-100 flex-[1_1_250px] flex-col gap-4 overflow-hidden rounded-sm border border-neutral-200 bg-neutral-100 p-4 transition-[border-color,background-color] duration-300 ease-in-out dark:border-neutral-800 dark:bg-neutral-900 [&>#output-text:empty~button]:pointer-events-none [&>#output-text:empty~button]:hidden [&>#output-text:empty~button]:opacity-0 [&>#output-text:not(:empty)+div]:hidden [&>#output-text:not(:empty)+div]:opacity-0">
   <span
     id="output-text"
     class="hidden wrap-anywhere opacity-0 transition-[opacity,display] transition-discrete duration-300 ease-in-out not-empty:block not-empty:opacity-100"
   ></span>
-  <div
-    class="flex flex-1 flex-col items-center justify-center gap-2 text-center transition-[opacity,display] transition-discrete duration-300 ease-in-out"
-  >
+  <div class="flex flex-1 flex-col items-center justify-center gap-2 text-center transition-[opacity,display] transition-discrete duration-300 ease-in-out">
     <figure class="flex size-24 items-center justify-center rounded-full bg-primary-500/10 text-primary-500">
       <DocumentIcon class="size-16" />
     </figure>

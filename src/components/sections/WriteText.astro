@@ -5,19 +5,26 @@ import WarningIcon from '@components/icons/Warning.astro';
 
 <section class="flex flex-[3_1_250px] flex-col gap-4">
   <div class="relative flex-1">
-    <label for="input-text" class="pointer-events-none absolute opacity-0">Texto de entrada</label>
+    <label for="input-text" class="pointer-events-none absolute opacity-0">
+      Texto de entrada
+    </label>
     <textarea
       id="input-text"
       class="size-full min-h-75 resize-none p-4 text-neutral-950 outline-none dark:text-neutral-50"
-      placeholder="Ingresa el texto a encriptar o desencriptar"></textarea>
+      placeholder="Ingresa el texto a encriptar o desencriptar"
+    ></textarea>
   </div>
   <span class="flex items-center gap-2 text-sm leading-none">
     <WarningIcon class="size-5" />
     Solo letras minúsculas y sin acento
   </span>
   <div class="flex flex-wrap gap-4">
-    <Button id="btn-encrypt" class="flex-1">Encriptar</Button>
-    <Button id="btn-decrypt" variant="btn-secondary" class="flex-1">Desencriptar</Button>
+    <Button id="btn-encrypt" class="flex-1">
+      Encriptar
+    </Button>
+    <Button id="btn-decrypt" variant="btn-secondary" class="flex-1">
+      Desencriptar
+    </Button>
   </div>
 </section>
 

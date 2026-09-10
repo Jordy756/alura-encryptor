@@ -26,6 +26,7 @@ const ogImageAlt = 'Vista previa de Alura Encryptor para encriptar y desencripta
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="canonical" href={canonicalUrl} />
 
@@ -66,9 +67,7 @@ const ogImageAlt = 'Vista previa de Alura Encryptor para encriptar y desencripta
       document.addEventListener('astro:after-swap', applyTheme);
     </script>
   </head>
-  <body
-    class="bg-neutral-50 text-pretty text-neutral-950 transition-[background-color,color] duration-300 ease-in-out dark:bg-neutral-950 dark:text-neutral-50"
-  >
+  <body class="bg-neutral-50 text-pretty text-neutral-950 transition-[background-color,color] duration-300 ease-in-out dark:bg-neutral-950 dark:text-neutral-50">
     <div class="relative flex min-h-screen flex-col gap-4 overflow-x-clip">
       <slot />
     </div>
