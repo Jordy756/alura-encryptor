@@ -15,9 +15,7 @@
   --color-primary-900: #4a202e;
 
   --max-width: 1200px;
-}
 
-@theme inline {
   --font-sans: var(--font-montserrat);
   --font-mono: var(--font-montserrat);
 }
